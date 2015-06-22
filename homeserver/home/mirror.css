@@ -22,7 +22,7 @@ p.ex {
 	color: #00ff00;
 	text-align: left;
         font-family: monospace;
-        font-size: small;
+        font-size: medium;
 }
 
 .smsbox-container-name{
@@ -30,9 +30,17 @@ p.ex {
 	text-align: right;
 }
 
-.smsbox-container-text{
+.smsbox-container-oldText{
 	width: 210px;
 	padding: 5px;
+	font-weight: normal;
+}
+
+.smsbox-container-newText{
+	width: 210px;
+	padding: 5px;
+	font-weight: bold;
+	font-size: large;
 }
 
 
