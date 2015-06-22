@@ -1,0 +1,38 @@
+body {
+        color: red;
+        background-color: black;
+}
+
+h1 {
+        color: #00ff00;
+        font-family: monospace;
+        font-size: small;
+}
+
+p.ex {
+    color: rgb(0,0,255);
+}
+
+.smsbox-container{
+	width: 300px;
+    	height: 400px;
+	padding: 10px;
+    	border: 1px solid navy;
+    	margin: 10px;
+	color: #00ff00;
+	text-align: left;
+        font-family: monospace;
+        font-size: small;
+}
+
+.smsbox-container-name{
+	width: 70px;	
+	text-align: right;
+}
+
+.smsbox-container-text{
+	width: 210px;
+	padding: 5px;
+}
+
+
