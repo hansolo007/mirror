@@ -50,39 +50,11 @@ def get_credentials():
     return credentials
 
 def main():
-    """Shows basic usage of the Gmail API.
-
-    Creates a Gmail API service object and outputs a list of label names
-    of the user's Gmail account.
-    """
     credentials = get_credentials()
     service = build('gmail', 'v1', http=credentials.authorize(Http()))
-
-    #results = service.users().labels().get(userId='me', id='Label_11').execute()
-    #print results
-    request = {
-  		'labelIds': ['Label_11'],
-  		'topicName': 'projects/api-project-122534795334/topics/mirrortopic'
-		}
-    watch = service.users().watch(userId='me', body=request).execute()	
-    print watch								
-	
-def threadMsgSort(threadMsg):
-	date = threadMsg['date']
-	date = date[ date.index(', ') + 2 : date.index('+')-1]
-	time = datetime.strptime(date, '%d %b %Y %H:%M:%S')
-	return time					   
-	'''		
-    labels = results.get('labels', [])
-
-    if not labels:
-        print 'No labels found.'
-    else:
-      print 'Labels:'
-      for label in labels:
-        print label['name']
-	print label['id']
-	'''
+    request = {'labelIds': ['INBOX'],'labelFilterAction': 'exclude', 'topicName': 'projects/api-project-122534795334/topics/mirrortopic'	}
+    watch = service.users().watch(userId='me', body=request).execute()
+    print watch
 
 if __name__ == '__main__':
     main()
